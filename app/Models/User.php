@@ -18,8 +18,19 @@ class User extends Authenticatable implements JWTSubject
      */
 
     protected $fillable = [
-        'openid','nickname','sex','language','city','province','country','headimgurl','unionid'
+        'openid','nickname','sex','language','city','province','country','avatar','unionid'
     ];
+
+    public function addresses()
+    {
+        return $this->hasMany(UserAddress::class);
+    }
+
+
+    public function cartItems()
+    {
+        return $this->hasMany(CartItem::class);
+    }
 
     public function getJWTIdentifier()
     {

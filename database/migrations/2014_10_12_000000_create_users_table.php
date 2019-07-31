@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('province')->nullable();
             $table->string('country')->nullable();
             $table->string('avatar');
-            $table->string('unionid')->unique();
+            //$table->string('unionid')->unique();
 
             $table->timestamps();
         });

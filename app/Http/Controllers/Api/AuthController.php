@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\User;
+use App\Transformers\UserTransformer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+
     public function index()
     {
         return 111;
@@ -18,22 +20,29 @@ class AuthController extends Controller
     public function store(Request $request)
     {
         $code = '';
-        $app= '';
-        $sessionUser = $app->auth->session($code);
-        $user = User::where('openid',$request->openid)->first();
-        if (!$user) {
-            $user = User::create([
-                'nickname' => $sessionUser->getNickname(),
-                'avatar' => $sessionUser->getAvatar(),
-                'openid' => $sessionUser->getId(),
-                'unionid' => $sessionUser->unionid,
-            ]);
-        }
+        // 小程序
+        $app = app('wechat.mini_program');
+        $user = User::where('openid',$request->openid)->firstOrFail();
+
+//        if (!$user) {
+//            $sessionUser = $app->auth->session($code);
+//            $user = User::create([
+//                'nickname' => $sessionUser->getNickname(),
+//                'avatar' => $sessionUser->getAvatar(),
+//                'openid' => $sessionUser->getId(),
+//                'unionid' => $sessionUser->unionid,
+//            ]);
+//        }
         $token=\Auth::guard('api')->fromUser($user);
         return $this->respondWithToken($token)->setStatusCode(201);
 
     }
 
+    // 个人中心
+    public function meShow()
+    {
+        return $this->response->item($this->user(),new UserTransformer());
+    }
 
     protected function respondWithToken($token)
     {
@@ -41,7 +50,7 @@ class AuthController extends Controller
         return $this->response->array([
             'access_token' => $token,
             'token_type' => 'Bearer',
-            'expires_in' => Auth::guard('api')->factory()->getTTL() * 60
+            'expires_in' => Auth::guard('api')->factory()->getTTL() * 4800
         ]);
     }
 }

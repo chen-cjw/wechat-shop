@@ -1,0 +1,8 @@
+{
+  "Id": "ID",
+  "Openid":"微信ID",
+  "Nickname":"用户名",
+  "Created at":"创建时间",
+  "Updated at":"修改时间",
+  "Sort num":"排序"
+}

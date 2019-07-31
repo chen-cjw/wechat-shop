@@ -11,7 +11,6 @@ class UserAddress extends Model
         'city',
         'district',
         'address',
-        'zip',
         'contact_name',
         'contact_phone',
         'last_used_at',
@@ -27,4 +26,5 @@ class UserAddress extends Model
     {
         return "{$this->province}{$this->city}{$this->district}{$this->address}";
     }
+
 }

@@ -1,7 +1,6 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\User;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -15,10 +14,12 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
-
-$factory->define(User::class, function (Faker $faker) {
+//        'openid','nickname','sex','language','city','province','country','headimgurl','unionid'
+$factory->define(\App\Models\User::class, function (Faker $faker) {
     return [
         'nickname' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
+        'openid' => 'oTpPj5HfdauThkOX4tSUbz5vajGY',
+        'sex' => 0,
+        'avatar' => 'http://b-ssl.duitang.com/uploads/item/201805/13/20180513224039_tgfwu.png',
     ];
 });
