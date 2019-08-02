@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('sold_count')->default(0)->comment('销量');
             $table->decimal('price', 10, 2)->comment('价格');
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->enum('type',['hot','recommend','common'])->comment('hot=>热销|recommend=>推荐|common=>普通');
             $table->timestamps();
         });
     }

@@ -31,16 +31,33 @@ $api->version('v1', [
 
         // 个人信息
         $api->get('/meShow','AuthController@meShow')->name('api.auth.meShow');
+        // 退出
+        $api->delete('/auth/current', 'AuthController@destroy')->name('api.auth.destroy');
+
         // 添加收获地址
         $api->post('/user_address','UserAddressController@store')->name('api.user_address.store');
         // 收货地址
         $api->get('/user_address','UserAddressController@index')->name('api.user_address.index');
         // 修改收获地址
-        $api->post('/user_address/{user_address}', 'UserAddressController@update')->name('user_addresses.update');
-        $api->post('/user_address/{user_address}/destroy', 'UserAddressController@destroy')->name('user_addresses.destroy');
+        $api->put('/user_address/{user_address}', 'UserAddressController@update')->name('api.user_addresses.update');
+        $api->delete('/user_address/{user_address}', 'UserAddressController@destroy')->name('api.user_addresses.destroy');
+        // 默认选中地址
+        $api->patch('/user_address/{user_address}', 'UserAddressController@select')->name('api.user_addresses.select');
+
 
         // 分类
-        $api->get('/category', 'CategoryController@index')->name('category.index');
+        $api->get('/category', 'CategoryController@index')->name('api.category.index');
+        // 商品
+        $api->get('/category/{category_id}/product', 'ProductController@index')->name('api.product.index');
+        // 商品详情
+        $api->get('/product/{id}', 'ProductController@show')->name('api.product.show');
+
+        // 购物车商品
+        $api->get('/cart', 'CartController@index')->name('api.cart.index');
+        // 添加购物车
+        $api->post('/cart', 'CartController@store')->name('api.cart.store');
+        // 移除购物车商品
+        $api->delete('/cart/{id}', 'CartController@destroy')->name('api.cart.destroy');
 
     });
 });

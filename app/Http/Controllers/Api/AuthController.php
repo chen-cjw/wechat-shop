@@ -43,7 +43,11 @@ class AuthController extends Controller
     {
         return $this->response->item($this->user(),new UserTransformer());
     }
-
+    public function destroy()
+    {
+        Auth::guard('api')->logout();
+        return $this->response->noContent();
+    }
     protected function respondWithToken($token)
     {
 

@@ -26,19 +26,19 @@ class AddCartRequest extends FormRequest
     public function rules()
     {
         return [
-            'sku_id' => [
+            'product_id' => [
                 'required',
                 function ($attribute, $value, $fail) {
-                    if (!$sku = Product::find($value)) {
+                    if (!$product = Product::find($value)) {
                         return $fail('该商品不存在');
                     }
-                    if (!$sku->product->on_sale) {
+                    if (!$product->on_sale) {
                         return $fail('该商品未上架');
                     }
-                    if ($sku->stock === 0) {
+                    if ($product->stock === 0) {
                         return $fail('该商品已售完');
                     }
-                    if ($this->input('amount') > 0 && $sku->stock < $this->input('amount')) {
+                    if ($this->input('amount') > 0 && $product->stock < $this->input('amount')) {
                         return $fail('该商品库存不足');
                     }
                 },

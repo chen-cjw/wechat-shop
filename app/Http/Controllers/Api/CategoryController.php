@@ -10,10 +10,9 @@ use App\Http\Controllers\Controller;
 class CategoryController extends Controller
 {
 
-    public function index(Request $request)
+    public function index()
     {
-        $orderBy = $request->input('sort','asc');
-        $category = Category::orderBy('sort_num',$orderBy)->get();
+        $category = Category::orderBy('sort_num','desc')->get();
         return $this->response->collection($category,new CategoryTransformer());
     }
 

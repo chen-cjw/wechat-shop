@@ -10,18 +10,22 @@ use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
-    // 搜索 + 分类商品
+    // 分类商品
     public function index(Request $request,$id)
     {
-        $query = Product::query()->select('title','image','on_sale','sold_count','price','category_id');
-        if($id) {
-            $query->where('category_id',$id);
-        }
-        if($request->title) {
-            $query->where('title','%'.$request->title.'%');
+
+        $product = Product::query()->select('id','title','image','on_sale','sold','sold_count','price','category_id','type')
+                    ->where('category_id',$id);
+        // 销量
+        if($sold_count = $request->sold_count_sort) {
+            $product->orderBy('sold_count',$sold_count); //$request->sold_count_sort 传 desc 或者 asc
+        }elseif ($type = $request->type) {
+            $product->where('type',$type);
+        }elseif ($price = $request->price_sort) {
+            $product->orderBy('price',$price); // $price 传 desc 或者 asc
         }
 
-        $product = $query->paginate(16);
+        $product = $product->paginate(16);
         return $this->response->paginator($product,new ProductTransformer());
     }
 
@@ -29,6 +33,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $productItem = Product::findOrFail($id);
-        return $this->response->item($productItem,new ProductItemTransformer());
+        return $productItem;
+        return $this->response->item($productItem,new ProductTransformer());
     }
 }
