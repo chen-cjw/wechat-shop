@@ -7,10 +7,8 @@ use App\Transformers\OrderTransformer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
-use App\Models\ProductSku;
 use App\Models\UserAddress;
 use App\Models\Order;
-use Carbon\Carbon;
 
 class OrdersController extends Controller
 {
