@@ -15,5 +15,6 @@ Route::group([
     //
 //    $router->get('category', 'CategoryController@index');
     $router->resource('category','CategoryController');
+    $router->resource('/category/{category_id}/product','ProductController');
 
 });
