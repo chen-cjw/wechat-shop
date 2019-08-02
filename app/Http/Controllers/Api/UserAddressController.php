@@ -14,7 +14,7 @@ class UserAddressController extends Controller
 
     public function index()
     {
-        return $this->response->collection($this->user()->addresses()->orderBy('last_used_at', 'desc')->get(),new UserAddressTransformer());
+        return $this->response->collection($this->user()->addresses()->get(),new UserAddressTransformer());
     }
     // 添加地址
     public function store(UserAddressRequest $request)

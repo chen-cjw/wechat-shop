@@ -15,22 +15,13 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('no')->unique();
+            $table->string('no')->unique()->comment('订单流水号');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->text('address');
-            $table->decimal('total_amount', 10, 2);
-            $table->text('remark')->nullable();
-            $table->dateTime('paid_at')->nullable();
-            $table->string('payment_method')->nullable();
-            $table->string('payment_no')->nullable();
-            $table->string('refund_status');
-            $table->string('refund_no')->unique()->nullable();
-            $table->boolean('closed')->default(false);
-            $table->boolean('reviewed')->default(false);
-            $table->string('ship_status');
-            $table->text('ship_data')->nullable();
-            $table->text('extra')->nullable();
+            $table->text('address')->comment('JSON 格式的收货地址');
+            $table->decimal('total_amount', 10, 2)->comment('订单总金额');
+            $table->text('remark')->nullable()->comment('订单备注');
+            $table->string('ship_status')->default(\App\Models\Order::SHIP_STATUS_PENDING);
             $table->timestamps();
         });
     }

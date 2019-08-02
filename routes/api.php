@@ -58,6 +58,10 @@ $api->version('v1', [
         $api->post('/cart', 'CartController@store')->name('api.cart.store');
         // 移除购物车商品
         $api->delete('/cart/{id}', 'CartController@destroy')->name('api.cart.destroy');
+        // 提交订单 OrdersController
+        $api->get('/order', 'OrdersController@index')->name('api.order.index');
+        $api->get('/order/{id}', 'OrdersController@show')->name('api.order.show');
+        $api->post('/order', 'OrdersController@store')->name('api.order.store');
 
     });
 });
