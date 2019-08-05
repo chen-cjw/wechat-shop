@@ -11,10 +11,10 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('admin.home');
-    $router->get('users', 'UsersController@index');
+    $router->get('/users', 'UsersController@index');
     //
 //    $router->get('category', 'CategoryController@index');
-    $router->resource('category','CategoryController');
+    $router->resource('/category','CategoryController');
     $router->resource('/category/{category_id}/product','ProductController');
-
+    $router->resource('/orders', 'OrdersController');
 });

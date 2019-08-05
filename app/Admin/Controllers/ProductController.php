@@ -28,6 +28,7 @@ class ProductController extends AdminController
         if ($category_id = request()->category_id) {
             $grid->model()->where('category_id',$category_id);
         }
+        $grid->model()->orderBy('id','desc');
         $grid->column('id', __('Id'));
         $grid->category()->title('分类名');
         $grid->column('title', __('商品名称'));
