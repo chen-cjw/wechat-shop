@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -43,10 +44,19 @@ class ProductController extends AdminController
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
         $grid->filter(function ($filter) {
-            $filter->like('title', '商品名称');
-            $filter->between('created_at', '创建时间')->datetime();
-            $filter->equal('on_sale','商品是否正在售卖')->select([1 => '是',0 => '否']);
+            $filter->expand();
+            $filter->column(1/2, function ($filter) {
+                $filter->like('title', '商品名称');
+                $filter->between('created_at', '创建时间')->datetime();
+
+            });
+            $filter->column(1/2, function ($filter) {
+                $filter->like('category_id', '分类名')->select(Category::pluck('title','id'));
+
+                $filter->equal('on_sale', '商品是否正在售卖')->select([1 => '是', 0 => '否']);
+            });
         });
+
         return $grid;
     }
 
@@ -83,6 +93,7 @@ class ProductController extends AdminController
     {
         $form = new Form(new Product);
 
+        $form->select('category_id', __('分类名'))->options(Category::pluck('title','id'));
         $form->text('title', __('商品名称'));
         $form->UEditor('description', __('商品详情'));
         $form->image('image', __('商品封面图片文件路径'));
@@ -90,7 +101,7 @@ class ProductController extends AdminController
         $form->number('stock', __('库存'));
         $form->number('sold_count', __('销量'));
         $form->decimal('price', __('价格'));
-        $categoryId = request()->route('category_id');
+        $categoryId = request()->category_id;
         $form->saving(function ($form) use ($categoryId) {
             $form->model()->category_id = $categoryId;
         });

@@ -31,7 +31,15 @@ class UsersController extends AdminController
         $grid->column('nickname', __('Nickname'));
         $grid->column('created_at', __('Created at'))->sortable();
         $grid->column('updated_at', __('Updated at'))->sortable();
-
+        $grid->filter(function ($filter) {
+            $filter->expand();
+            $filter->column(1/2, function ($filter) {
+                $filter->between('created_at', '创建时间')->datetime();
+            });
+            $filter->column(1/2, function ($filter) {
+                $filter->like('nickname', __('Nickname'));
+            });
+        });
         return $grid;
     }
 

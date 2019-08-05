@@ -33,12 +33,18 @@ class CategoryController extends AdminController
 
         $grid->column('created_at', __('Created at'))->sortable();
         $grid->column('updated_at', __('Updated at'))->sortable();
-        $grid->column('add_product', '商品')->display(function () {
-            return "<a href='/admin/category/{$this->id}/product/create'  target='_blank'>添加</a>"."|"."<a href='/admin/category/{$this->id}/product' target='_blank'>查看</a>";
+        $grid->column('add_product', '商品添加')->display(function () {
+            return "<a href='/product' target='_blank'>查看</a>";
         });
+
         $grid->filter(function ($filter) {
-            $filter->like('title', '分类名');
-            $filter->between('created_at', '创建时间')->datetime();
+            $filter->expand();
+            $filter->column(1/2, function ($filter) {
+                $filter->between('created_at', '创建时间')->datetime();
+            });
+            $filter->column(1/2, function ($filter) {
+                $filter->like('title', '分类名');
+            });
 
         });
         return $grid;

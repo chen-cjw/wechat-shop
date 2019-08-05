@@ -29,7 +29,7 @@ class OrdersController extends AdminController
         $grid = new Grid(new Order);
 
         $grid->column('id', __('Id'));
-        $grid->column('no', __('订单流水号'));
+        $grid->column('no', __('订单号'));
         $grid->column('user.nickname', __('用户名'));
         //$grid->column('address', __('Address'));
         $grid->column('total_amount', __('总金额'));
@@ -39,7 +39,12 @@ class OrdersController extends AdminController
 
         $grid->ship_status('编辑物流')->display(function($value) {
             return Order::$shipStatusMap[$value];
-        })->editable('select', ['pending' => '未发货', 'delivered' => '已发货', 'received' => '已收货','close'=>'取消']);
+        })->editable('select', ['pending' => '未发货', 'delivered' => '已发货', 'received' => '已收货','close'=>'取消'])->filter([
+            'pending' => '未发货',
+            'delivered' => '已发货',
+            'received' => '已收货',
+            'close' => '取消',
+        ]);
 
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
@@ -56,6 +61,20 @@ class OrdersController extends AdminController
                 $batch->disableDelete();
             });
         });
+
+
+        $grid->filter(function ($filter) {
+            $filter->expand();
+            $filter->column(1/2, function ($filter) {
+                $filter->between('created_at', '创建时间')->datetime();
+            });
+            $filter->column(1/2, function ($filter) {
+                $filter->like('no', '订单号');
+            });
+
+
+        });
+
         return $grid;
     }
 
