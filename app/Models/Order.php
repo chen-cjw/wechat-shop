@@ -9,11 +9,13 @@ class Order extends Model
     const SHIP_STATUS_PENDING = 'pending';
     const SHIP_STATUS_DELIVERED = 'delivered';
     const SHIP_STATUS_RECEIVED = 'received';
+    const SHIP_STATUS_CLOSE = 'close';
 
     public static $shipStatusMap = [
         self::SHIP_STATUS_PENDING   => '未发货',
         self::SHIP_STATUS_DELIVERED => '已发货',
         self::SHIP_STATUS_RECEIVED  => '已收货',
+        self::SHIP_STATUS_CLOSE  => '取消',
     ];
 
     protected $fillable = [
@@ -63,6 +65,11 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
+    public function getStatusAttribute()
+    {
+        return $this->ship_status;
+        
+    }
     public static function findAvailableNo()
     {
         // 订单流水号前缀
@@ -79,4 +86,5 @@ class Order extends Model
 
         return false;
     }
+    protected $appends = ['status'];
 }

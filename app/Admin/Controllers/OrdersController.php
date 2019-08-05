@@ -7,6 +7,8 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Encore\Admin\Layout\Content;
+
 
 class OrdersController extends AdminController
 {
@@ -28,11 +30,17 @@ class OrdersController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('no', __('订单流水号'));
-        $grid->column('user.name', __('用户名'));
+        $grid->column('user.nickname', __('用户名'));
         //$grid->column('address', __('Address'));
         $grid->column('total_amount', __('总金额'));
-        //$grid->column('remark', __('Remark'));
-        $grid->column('ship_status', __('物流'));
+        $grid->column('status', __('物流'))->display(function($value) {
+            return Order::$shipStatusMap[$value];
+        });
+
+        $grid->ship_status('编辑物流')->display(function($value) {
+            return Order::$shipStatusMap[$value];
+        })->editable('select', ['pending' => '未发货', 'delivered' => '已发货', 'received' => '已收货','close'=>'取消']);
+
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
         // 禁用创建按钮，后台不需要创建订单
@@ -51,6 +59,13 @@ class OrdersController extends AdminController
         return $grid;
     }
 
+    public function show($id, Content $content)
+    {
+        return $content
+            ->title($this->title())
+            ->description($this->description['show'] ?? trans('admin.show'))
+            ->body(view('admin.orders.show', ['order' => Order::find($id)]));
+    }
     /**
      * Make a show builder.
      *

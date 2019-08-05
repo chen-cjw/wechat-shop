@@ -63,5 +63,12 @@ $api->version('v1', [
         $api->get('/order/{id}', 'OrdersController@show')->name('api.order.show');
         $api->post('/order', 'OrdersController@store')->name('api.order.store');
 
+        // 取消
+        $api->post('/order/{id}/close', 'OrdersController@close')->name('api.order.close');
+
+        // 确认
+        $api->post('/order/{id}/confirm', 'OrdersController@confirm')->name('api.order.confirm');
+
+
     });
 });

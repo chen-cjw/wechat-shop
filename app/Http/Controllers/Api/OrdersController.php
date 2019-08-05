@@ -88,6 +88,22 @@ class OrdersController extends Controller
         return $this->response->created();
 
     }
-
-    //
+    
+    // 取消
+    public function close($id)
+    {
+        $this->user()->orders()->where('user_id',$this->user()->id)->where('id',$id)->update([
+            'ship_status' => 'close'
+        ]);
+        return $this->response->created();
+    }
+    
+    // 确认收获
+    public function confirm($id)
+    {
+        $this->user()->orders()->where('user_id',$this->user()->id)->where('id',$id)->update([
+            'ship_status' => 'received'
+        ]);
+        return $this->response->created();
+    }
 }
