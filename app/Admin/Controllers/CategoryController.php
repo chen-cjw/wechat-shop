@@ -33,9 +33,9 @@ class CategoryController extends AdminController
 
         $grid->column('created_at', __('Created at'))->sortable();
         $grid->column('updated_at', __('Updated at'))->sortable();
-        $grid->column('add_product', '商品添加')->display(function () {
-            return "<a href='/product' target='_blank'>查看</a>";
-        });
+//        $grid->column('add_product', '商品添加')->display(function () {
+//            return "<a href='/product' target='_blank'>查看</a>";
+//        });
 
         $grid->filter(function ($filter) {
             $filter->expand();

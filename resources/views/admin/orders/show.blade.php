@@ -15,8 +15,14 @@
                 <td>{{ $order->user->nickname }}</td>
             </tr>
             <tr>
+                <td>收货人</td>
+                <td>{{ $order->address['contact_name'] }}</td>
+                <td>电话</td>
+                <td>{{ $order->address['contact_phone'] }}</td>
+            </tr>
+            <tr>
                 <td>收货地址</td>
-                <td colspan="3">{{ $order->address['address'] }} {{ $order->address['contact_name'] }} {{ $order->address['contact_phone'] }}</td>
+                <td colspan="3">{{ $order->address['address'] }} </td>
             </tr>
             <tr>
                 <td rowspan="{{ $order->items->count() + 1 }}">商品列表</td>

@@ -70,6 +70,12 @@ class OrdersController extends AdminController
             });
             $filter->column(1/2, function ($filter) {
                 $filter->like('no', '订单号');
+                $filter->equal('ship_status','物流')->multipleSelect([
+                    'pending' => '未发货',
+                    'delivered' => '已发货',
+                    'received' => '已收货',
+                    'close' => '取消'
+                ]);
             });
 
 
