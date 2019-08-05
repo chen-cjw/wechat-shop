@@ -124,6 +124,28 @@ class AdminTablesSeeder extends Seeder
                     "permission" => NULL,
                     "created_at" => "2019-07-30 15:32:12",
                     "updated_at" => "2019-07-30 15:33:26"
+                ],
+                [
+                    "id" => 11,
+                    "parent_id" => 0,
+                    "order" => 0,
+                    "title" => "商品添加",
+                    "icon" => "fa-bars",
+                    "uri" => "/product",
+                    "permission" => NULL,
+                    "created_at" => "2019-08-02 14:19:55",
+                    "updated_at" => "2019-08-02 14:19:55"
+                ],
+                [
+                    "id" => 12,
+                    "parent_id" => 0,
+                    "order" => 0,
+                    "title" => "订单管理",
+                    "icon" => "fa-bars",
+                    "uri" => "/orders",
+                    "permission" => NULL,
+                    "created_at" => "2019-08-05 09:49:14",
+                    "updated_at" => "2019-08-05 09:49:14"
                 ]
             ]
         );
