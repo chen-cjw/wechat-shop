@@ -14,7 +14,7 @@ class ProductTransformer extends TransformerAbstract
             'title' => $product->title,
             'image' => $product->image,
             'on_sale' => $product->on_sale,
-            'sold' => $product->sold,
+            'stock' => $product->stock,
             'sold_count' => $product->sold_count,
             'price' => $product->price,
             'category_id' => $product->category_id,

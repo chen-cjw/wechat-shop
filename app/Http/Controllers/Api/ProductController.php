@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index(Request $request,$id)
     {
 
-        $product = Product::query()->select('id','title','image','on_sale','sold','sold_count','price','category_id','type')
+        $product = Product::query()->select('id','title','image','on_sale','stock','sold_count','price','category_id','type')
                     ->where('category_id',$id);
         // 销量
         if($sold_count = $request->sold_count_sort) {
