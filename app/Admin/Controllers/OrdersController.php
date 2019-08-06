@@ -132,4 +132,12 @@ class OrdersController extends AdminController
 
         return $form;
     }
+
+    public function confirm($id)
+    {
+        Order::where('id',$id)->update([
+            'ship_status' => 'delivered'
+        ]);
+        return redirect()->back();
+    }
 }

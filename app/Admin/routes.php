@@ -17,4 +17,6 @@ Route::group([
     $router->resource('/category','CategoryController');
     $router->resource('/product','ProductController');
     $router->resource('/orders', 'OrdersController');
+    $router->post('/orders/{id}/confirm', 'OrdersController@confirm');
+
 });

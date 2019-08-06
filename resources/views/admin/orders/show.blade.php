@@ -47,26 +47,33 @@
             <!-- 订单发货开始 -->
             <!-- 如果订单未发货，展示发货表单 -->
             @if($order->ship_status === \App\Models\Order::SHIP_STATUS_PENDING) @endif
-            {{--<tr>--}}
-                {{--<td>--}}
-                    {{--<form>--}}
-                        {{--<button type="submit" class="btn btn-default" id="ship-btn">发货</button>--}}
-                    {{--</form>--}}
-                {{--</td>--}}
-                {{--<td>--}}
-                    {{--<form>--}}
-                        {{--<button type="submit" class="btn btn-default" id="ship-btn">确认收获</button>--}}
-                    {{--</form>--}}
-                {{--</td>--}}
-                {{--<td>--}}
-                    {{--<form>--}}
-                        {{--<button type="submit" class="btn btn-default" id="ship-btn">取消</button>--}}
-                    {{--</form>--}}
-                {{--</td>--}}
-                {{--<td>{{ $order->ship_data['express_no'] }}</td>--}}
-            {{--</tr>--}}
-            </tbody>
 
+            <tr>
+                <td>
+                    <form>
+                        {{--<button type="submit" class="btn btn-success" id="ship-btn">发货</button>--}}
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        {{--<button type="submit" class="btn btn-default" id="ship-btn">确认收获</button>--}}
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        {{--<button type="submit" class="btn btn-default" id="ship-btn">取消</button>--}}
+                    </form>
+                </td>
+                <td>
+                    {{--$router->post('/orders/{id}/confirm', 'OrdersController@confirm');--}}
+
+                    <form method="post" action="/admin/orders/{{$order->id}}/confirm">
+                        {{ csrf_field() }}
+                        <button type="submit" class="btn btn-success" id="ship-btn">发货</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
         </table>
 
 
