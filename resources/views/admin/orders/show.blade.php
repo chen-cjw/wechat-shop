@@ -26,9 +26,9 @@
             </tr>
             <tr>
                 <td rowspan="{{ $order->items->count() + 1 }}">商品列表</td>
-                <td>商品名称</td>
-                <td>单价</td>
-                <td>数量</td>
+                <td style="color: red">商品名称</td>
+                <td style="color: red">单价</td>
+                <td style="color: red">数量</td>
             </tr>
             @foreach($order->items as $item)
                 <tr>
