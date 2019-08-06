@@ -15,7 +15,7 @@ class ProductController extends Controller
     {
 
         $product = Product::query()->select('id','title','image','on_sale','stock','sold_count','price','category_id','type')
-                    ->where('category_id',$id);
+                    ->where('category_id',$id)->where('on_sale',1);
         // 销量
         if($sold_count = $request->sold_count_sort) {
             $product->orderBy('sold_count',$sold_count); //$request->sold_count_sort 传 desc 或者 asc
