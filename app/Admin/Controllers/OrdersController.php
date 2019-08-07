@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Post\BatchReplicate;
 use App\Models\Order;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -62,7 +63,9 @@ class OrdersController extends AdminController
             });
         });
 
-
+        $grid->batchActions(function ($batch) {
+            $batch->add(new BatchReplicate());
+        });
         $grid->filter(function ($filter) {
             $filter->expand();
             $filter->column(1/2, function ($filter) {

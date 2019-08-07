@@ -12,7 +12,7 @@
         "barryvdh/laravel-cors": "^0.11.3",
         "codingyu/ueditor": "^2.0",
         "dingo/api": "^2.3",
-        "encore/laravel-admin": "^1.7",
+        "encore/laravel-admin": "1.7.3",
         "fideloper/proxy": "^4.0",
         "laravel-admin-ext/grid-lightbox": "^1.0",
         "laravel/framework": "5.8.*",
