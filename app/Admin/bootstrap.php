@@ -19,3 +19,11 @@
  */
 
 Encore\Admin\Form::forget(['map', 'editor']);
+use Encore\Admin\Facades\Admin;
+
+Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
+
+    $navbar->left('<a class="btn btn-xs btn-default form-history-bac" style="float: right;margin-right: 20px; margin-top: 14px;" href="#" onClick="javascript :history.back(-1);"><i class="fa fa-arrow-left"></i>&nbsp;返回</a>');
+
+
+});
