@@ -26,7 +26,6 @@ class CategoryController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Category);
-
         $grid->column('id', __('Id'))->sortable();
         $grid->column('title', __('分类名'));
         $grid->column('sort_num', __('Sort num'))->sortable();
@@ -79,7 +78,7 @@ class CategoryController extends AdminController
         $form = new Form(new Category);
 
         $form->text('title', __('分类名'));
-        $form->text('sort_num', __('Sort num'));
+        $form->text('sort_num', __('Sort num'))->default(0);
 
         return $form;
     }
