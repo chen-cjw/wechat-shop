@@ -4,6 +4,8 @@ use App\Models\CartItem;
 use League\Fractal\TransformerAbstract;
 class CartTransformer extends TransformerAbstract
 {
+    protected $availableIncludes = ['product'];
+
     public function transform(CartItem $cartItem)
     {
         return [
@@ -14,5 +16,9 @@ class CartTransformer extends TransformerAbstract
             'product' => $cartItem->product,
 
         ];
+    }
+    public function includeProduct(CartItem $cartItem)
+    {
+        return $this->item($cartItem->product, new ProductTransformer());
     }
 }
