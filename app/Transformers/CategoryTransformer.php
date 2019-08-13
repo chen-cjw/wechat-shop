@@ -9,6 +9,7 @@ class CategoryTransformer extends TransformerAbstract
         return [
             'id' => $category->id,
             'title' => $category->title,
+            'image' => config('app.url').'/storage/'.$category->image,
             'sort_num' => $category->sort_num,
         ];
     }
