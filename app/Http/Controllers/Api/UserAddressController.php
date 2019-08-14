@@ -65,7 +65,7 @@ class UserAddressController extends Controller
     // 删除
     public function destroy($id)
     {
-        UserAddress::findOrFail($id);
+        UserAddress::destroy($id);
         return $this->response->noContent();
     }
 
