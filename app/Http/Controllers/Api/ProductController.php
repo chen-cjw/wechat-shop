@@ -33,6 +33,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $productItem = Product::findOrFail($id);
+
         return $this->response->item($productItem,new ProductTransformer());
     }
 }

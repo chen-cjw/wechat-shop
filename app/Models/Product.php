@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Dingo\Api\Exception\InternalHttpException;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+
 
 class Product extends Model
 {
@@ -40,4 +42,28 @@ class Product extends Model
         }
         $this->increment('stock', $amount);
     }
+
+
+    public function setImageAttribute($image)
+    {
+        if (is_array($image)) {
+            $this->attributes['image'] = json_encode($image);
+        }
+    }
+    public function getImageAttribute($image)
+    {
+
+        $arr = json_decode($image, true);
+        $collect = [];
+        foreach ($arr as $k=>$v) {
+            $isHttp = Str::startsWith($v, ['http://', 'https://']);
+            if($isHttp) {
+                $collect[] = $v;
+            }else {
+                $collect[] = config('app.url').'/storage/'.$v;
+            }
+        }
+        return $collect;
+    }
+
 }

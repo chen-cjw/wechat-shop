@@ -12,7 +12,7 @@ class ProductTransformer extends TransformerAbstract
         return [
             'id' => $product->id,
             'title' => $product->title,
-            'image' => config('app.url').'/storage/'.$product->image,
+            'image' => $product->image,
             'on_sale' => $product->on_sale,
             'stock' => $product->stock,
             'sold_count' => $product->sold_count,
