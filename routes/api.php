@@ -42,7 +42,7 @@ $api->version('v1', [
         $api->put('/user_address/{user_address}', 'UserAddressController@update')->name('api.user_addresses.update');
         $api->delete('/user_address/{user_address}', 'UserAddressController@destroy')->name('api.user_addresses.destroy');
         // 默认选中地址
-        $api->patch('/user_address/{user_address}', 'UserAddressController@select')->name('api.user_addresses.select');
+        $api->post('/user_address/{user_address}', 'UserAddressController@select')->name('api.user_addresses.select');
 
 
         // 分类
