@@ -23,6 +23,59 @@ class OrdersController extends Controller
             ->paginate();
         return $this->response->paginator($orders,new OrderTransformer());
     }
+    // 未发货
+    public function pendingIndex(Request $request)
+    {
+        return 111;
+        $orders = Order::query()
+            // 使用 with 方法预加载，避免N + 1问题
+            ->with(['items.product'])
+            ->where('ship_status','pending')
+            ->where('user_id', $this->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate();
+        return $this->response->paginator($orders,new OrderTransformer());
+    }
+    // 已发货
+    public function deliveredIndex(Request $request)
+    {
+        $orders = Order::query()
+            // 使用 with 方法预加载，避免N + 1问题
+            ->with(['items.product'])
+            ->where('ship_status','delivered')
+
+            ->where('user_id', $this->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate();
+        return $this->response->paginator($orders,new OrderTransformer());
+    }
+    // 已收货
+    public function receivedIndex(Request $request)
+    {
+        $orders = Order::query()
+            // 使用 with 方法预加载，避免N + 1问题
+            ->with(['items.product'])
+            ->where('ship_status','received')
+
+            ->where('user_id', $this->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate();
+        return $this->response->paginator($orders,new OrderTransformer());
+    }
+
+    // 取消
+    public function closeIndex(Request $request)
+    {
+        $orders = Order::query()
+            // 使用 with 方法预加载，避免N + 1问题
+            ->with(['items.product'])
+            ->where('ship_status','close')
+
+            ->where('user_id', $this->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate();
+        return $this->response->paginator($orders,new OrderTransformer());
+    }
 
     public function show($id)
     {
