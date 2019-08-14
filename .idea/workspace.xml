@@ -20,8 +20,8 @@
       <file leaf-file-name="OrdersController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/OrdersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="330">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -38,8 +38,8 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="73" column="66" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="66" />
+            <state relative-caret-position="587">
+              <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -63,7 +63,6 @@
       <find>$totalAmount += $sku-&gt;price * $data['amount'];</find>
       <find>extensions</find>
       <find>items</find>
-      <find>OrdersController</find>
       <find>sold</find>
       <find>on_sale</find>
       <find>grid_action_class</find>
@@ -78,6 +77,7 @@
       <find>url</find>
       <find>APP_URL</find>
       <find>pendingIndex</find>
+      <find>OrdersController</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -428,12 +428,12 @@
       <workItem from="1565683818256" duration="1050000" />
       <workItem from="1565697704006" duration="1801000" />
       <workItem from="1565751381820" duration="6977000" />
-      <workItem from="1565771353484" duration="1832000" />
+      <workItem from="1565771353484" duration="2060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83946000" />
+    <option name="totallyTimeSpent" value="84174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -737,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="73" column="66" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -751,10 +744,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/OrdersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="330">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>

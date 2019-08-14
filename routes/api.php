@@ -71,16 +71,16 @@ $api->version('v1', [
 
 
         // 未发货
-        $api->get('/order/pending', 'OrdersController@pendingIndex')->name('api.order.pendingIndex');
+        $api->get('/orders/pending', 'OrdersController@pendingIndex')->name('api.order.pendingIndex');
 
         // 已发货
-        $api->get('/order/delivered', 'OrdersController@deliveredIndex')->name('api.order.deliveredIndex');
+        $api->get('/orders/delivered', 'OrdersController@deliveredIndex')->name('api.order.deliveredIndex');
 
         // 已收货
-        $api->get('/order/received', 'OrdersController@receivedIndex')->name('api.order.receivedIndex');
+        $api->get('/orders/received', 'OrdersController@receivedIndex')->name('api.order.receivedIndex');
 
         // 取消
-        $api->get('/order/close', 'OrdersController@closeIndex')->name('api.order.closeIndex');
+        $api->get('/orders/close', 'OrdersController@closeIndex')->name('api.order.closeIndex');
 
 
     });

@@ -26,7 +26,6 @@ class OrdersController extends Controller
     // 未发货
     public function pendingIndex(Request $request)
     {
-        return 111;
         $orders = Order::query()
             // 使用 with 方法预加载，避免N + 1问题
             ->with(['items.product'])
