@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="404529c8-13db-41b0-a869-447c9e411a02" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_29_063138_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_29_063138_create_products_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,9 +61,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="faa5c3fa160a45ad82da1bf70dce91ee.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/storage/images/faa5c3fa160a45ad82da1bf70dce91ee.jpg">
-          <provider selected="true" editor-type-id="images" />
+      <file leaf-file-name="2019_07_29_063138_create_products_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_29_063138_create_products_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Blueprint.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="616" column="20" selection-start-line="616" selection-start-column="20" selection-end-line="616" selection-end-column="20" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
@@ -75,11 +88,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ewm5.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/storage/images/ewm5.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
       <file leaf-file-name="ProductTransformer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Transformers/ProductTransformer.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,10 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserAddressController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserAddressController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
+            <state relative-caret-position="621">
               <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
             </state>
           </provider>
@@ -160,7 +168,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_07_31_173422_create_orders_table.php" />
         <option value="$PROJECT_DIR$/app/Models/OrderItem.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_07_31_173409_create_order_items_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_07_29_063138_create_products_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/OrderRequest.php" />
         <option value="$PROJECT_DIR$/app/Transformers/OrderTransformer.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
@@ -194,6 +201,7 @@
         <option value="$PROJECT_DIR$/app/Models/Product.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_07_29_063138_create_products_table.php" />
       </list>
     </option>
   </component>
@@ -427,6 +435,12 @@
             <path>
               <item name="xiaochengxu" type="b2602c69:ProjectViewProjectNode" />
               <item name="xiaochengxu" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xiaochengxu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xiaochengxu" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -487,12 +501,12 @@
       <workItem from="1565683818256" duration="1050000" />
       <workItem from="1565697704006" duration="1801000" />
       <workItem from="1565751381820" duration="6977000" />
-      <workItem from="1565771353484" duration="311000" />
+      <workItem from="1565771353484" duration="586000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82425000" />
+    <option name="totallyTimeSpent" value="82700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -528,13 +542,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="44" column="26" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -595,13 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_29_063138_create_products_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" selection-start-line="19" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -812,8 +812,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
+        <state relative-caret-position="621">
           <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="616" column="20" selection-start-line="616" selection-start-column="20" selection-end-line="616" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_29_063138_create_products_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
         </state>
       </provider>
     </entry>
