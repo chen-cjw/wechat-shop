@@ -25,7 +25,7 @@ $api->version('v1', [
     // 授权
     $api->post('/auth','AuthController@store')->name('api.auth.store');
 
-    $api->group(['middleware' => ['auth:api']], function ($api) {
+    $api->group(['middleware' => ['api.auth']], function ($api) {
 
         $api->get('/auth','AuthController@index')->name('api.auth.index');
 
