@@ -20,7 +20,7 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', [
     'namespace' => 'App\Http\Controllers\Api',
-    'middleware' => ['serializer:array']
+    'middleware' => ['serializer:array','api.throttle']
 ], function ($api) {
     // 授权
     $api->post('/auth','AuthController@store')->name('api.auth.store');
