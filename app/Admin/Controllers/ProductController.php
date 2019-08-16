@@ -42,14 +42,14 @@ class ProductController extends AdminController
 
         $grid->column('type', __('商品类型'))->display(function ($type) {
             if($type =='hot')
-                return '热销';
+                return '<button type="button" class="btn btn-danger btn-xs">热销</button>';
             if($type =='recommend')
-                return '推荐';
+                return '<button type="button" class="btn btn-success btn-xs">推荐</button>';
             if($type =='common')
-                return '普通';
+                return '<button type="button" class="btn btn-default btn-xs">普通</button>';
         });;
         $grid->column('on_sale', __('商品是否正在售卖'))->display(function ($on_sale) {
-            return $on_sale == 1 ? '是' : '否';
+            return $on_sale == 1 ? '<button type="button" class="btn btn-primary btn-xs">是</button>' : '<button type="button" class="btn btn-default btn-xs">否</button>';
         });
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
