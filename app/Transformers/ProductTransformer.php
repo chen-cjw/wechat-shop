@@ -20,6 +20,8 @@ class ProductTransformer extends TransformerAbstract
             'category_id' => $product->category_id,
             'type' => $product->type,
             'description' => $product->description,
+            'created_at' => $product->created_at->timestamp,
+            'updated_at' => $product->updated_at->timestamp,
         ];
     }
 }

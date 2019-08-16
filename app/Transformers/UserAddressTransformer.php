@@ -17,7 +17,9 @@ class UserAddressTransformer extends TransformerAbstract
             'contact_name' => $address->contact_name,
             'contact_phone' => $address->contact_phone,
             //'last_used_at' => $address->last_used_at,
-            'is_check' => $address->is_check
+            'is_check' => $address->is_check,
+            'created_at' => $address->created_at->timestamp,
+            'updated_at' => $address->updated_at->timestamp,
         ];
     }
 }

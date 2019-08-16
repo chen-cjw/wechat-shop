@@ -12,7 +12,9 @@ class UserTransformer extends TransformerAbstract
             'openid' => $user->openid,
             'nickname' => $user->nickname,
             'sex' => $user->sex,
-            'avatar' => $user->avatar
+            'avatar' => $user->avatar,
+            'created_at' => $user->created_at->timestamp,
+            'updated_at' => $user->updated_at->timestamp,
         ];
     }
 }
