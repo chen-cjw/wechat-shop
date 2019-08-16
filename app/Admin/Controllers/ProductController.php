@@ -63,7 +63,9 @@ class ProductController extends AdminController
             $filter->column(1/2, function ($filter) {
                 $filter->like('category_id', '分类名')->select(Category::pluck('title','id'));
 
-                $filter->equal('on_sale', '商品是否正在售卖')->select([1 => '是', 0 => '否']);
+                $filter->equal('on_sale', '是否售卖')->select([1 => '是', 0 => '否']);
+                $filter->equal('type','商品类型')->select(['hot' => '热销','recommend' => '推荐','common' => '普通']);
+
             });
         });
 
