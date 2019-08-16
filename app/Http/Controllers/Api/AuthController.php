@@ -19,11 +19,15 @@ class AuthController extends Controller
     // 一个是登陆
     public function store(Request $request)
     {
-        $code = '';
+        $code = $request->code;
         // 小程序
         $app = app('wechat.mini_program');
 //        dd($app);
 //        return $app;
+        if($code) {
+            $sessionUser = $app->auth->session($code);
+            dd($sessionUser);
+        }
         $user = User::where('openid',$request->openid)->firstOrFail();
 //
         if (!$user) {
