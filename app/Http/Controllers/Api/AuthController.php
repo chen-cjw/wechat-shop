@@ -26,7 +26,11 @@ class AuthController extends Controller
 //        return $app;
         if($code) {
             $sessionUser = $app->auth->session($code);
-            dd($sessionUser);
+            $data['nickname'] = $sessionUser->getNickname();
+            $data['avatar'] = $sessionUser->getAvatar();
+            $data['openid'] = $sessionUser->getId();
+            $data['unionid'] = $sessionUser->unionid;
+            dd($data);
         }
         $user = User::where('openid',$request->openid)->firstOrFail();
 //
