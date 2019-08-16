@@ -11,8 +11,8 @@ class CategoryTransformer extends TransformerAbstract
             'title' => $category->title,
             'image' => config('app.url').'/storage/'.$category->image,
             'sort_num' => $category->sort_num,
-            'created_at' => $category->created_at->timestamp,
-            'updated_at' => $category->updated_at->timestamp,
+            'created_at' => $category->created_at->toDateTimeString(),
+            'updated_at' => $category->updated_at->toDateTimeString(),
         ];
     }
 }

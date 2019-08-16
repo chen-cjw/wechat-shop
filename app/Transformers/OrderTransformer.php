@@ -15,8 +15,8 @@ class OrderTransformer extends TransformerAbstract
             'total_amount' => $order->total_amount,
             'remark' => $order->remark,
             'ship_status' => $order->ship_status,
-            'created_at' => $order->created_at->timestamp,
-            'updated_at' => $order->updated_at->timestamp,
+            'created_at' => $order->created_at->toDateTimeString(),
+            'updated_at' => $order->updated_at->toDateTimeString(),
             'items' => $order->items,
 
         ];

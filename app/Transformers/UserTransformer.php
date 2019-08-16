@@ -13,8 +13,8 @@ class UserTransformer extends TransformerAbstract
             'nickname' => $user->nickname,
             'sex' => $user->sex,
             'avatar' => $user->avatar,
-            'created_at' => $user->created_at->timestamp,
-            'updated_at' => $user->updated_at->timestamp,
+            'created_at' => $user->created_at->toDateTimeString(),
+            'updated_at' => $user->updated_at->toDateTimeString(),
         ];
     }
 }
