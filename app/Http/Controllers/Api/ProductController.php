@@ -28,6 +28,21 @@ class ProductController extends Controller
         $product = $product->paginate(16);
         return $this->response->paginator($product,new ProductTransformer());
     }
+    // 商品类型搜索
+    public function typeIndex(Request $request)
+    {
+
+        $product = Product::query()->select('id','title','image','on_sale','stock','sold_count','price','category_id','type')
+            ->where('on_sale',1);
+        // 销量
+        if($type = $request->type) {
+            $product->where('type',$type);
+        }
+
+        $product = $product->paginate(16);
+        return $this->response->paginator($product,new ProductTransformer());
+    }
+
 
     // 详情
     public function show($id)
