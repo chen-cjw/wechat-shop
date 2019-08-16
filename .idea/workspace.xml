@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="404529c8-13db-41b0-a869-447c9e411a02" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Transformers/CartTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/CartTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/CategoryTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/CategoryTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/OrderTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/OrderTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/UserAddressTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/UserAddressTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/UserTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/UserTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,15 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/ProductController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CategoryTransformer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Transformers/CategoryTransformer.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -65,7 +52,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserTransformer.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserTransformer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Transformers/UserTransformer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -83,20 +70,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2014_10_12_000000_create_users_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+            <state relative-caret-position="270">
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductItemTransformer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Transformers/ProductItemTransformer.php">
+      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/CategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="20" selection-end-column="60" />
+            <state relative-caret-position="1016">
+              <caret line="82" column="20" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -196,7 +192,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/OrdersController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php" />
         <option value="$PROJECT_DIR$/app/Admin/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/app/Transformers/ProductItemTransformer.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
@@ -206,6 +201,7 @@
         <option value="$PROJECT_DIR$/app/Transformers/OrderTransformer.php" />
         <option value="$PROJECT_DIR$/app/Transformers/UserAddressTransformer.php" />
         <option value="$PROJECT_DIR$/app/Transformers/UserTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php" />
       </list>
     </option>
   </component>
@@ -511,12 +507,12 @@
       <workItem from="1565918461986" duration="17000" />
       <workItem from="1565919730633" duration="968000" />
       <workItem from="1565934447131" duration="2062000" />
-      <workItem from="1565953972866" duration="666000" />
+      <workItem from="1565953972866" duration="1675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90433000" />
+    <option name="totallyTimeSpent" value="91442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -552,13 +548,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Actions/Post/BatchReplicate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -619,13 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="82" column="20" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -749,13 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -830,6 +805,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/Controllers/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1016">
+          <caret line="82" column="20" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
         </state>
       </provider>
     </entry>

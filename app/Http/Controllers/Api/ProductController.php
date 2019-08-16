@@ -19,10 +19,15 @@ class ProductController extends Controller
         // 销量
         if($sold_count = $request->sold_count_sort) {
             $product->orderBy('sold_count',$sold_count); //$request->sold_count_sort 传 desc 或者 asc
-        }elseif ($type = $request->type) {
+        }
+        if ($type = $request->type) {
             $product->where('type',$type);
-        }elseif ($price = $request->price_sort) {
+        }
+        if ($price = $request->price_sort) {
             $product->orderBy('price',$price); // $price 传 desc 或者 asc
+        }
+        if ($title = $request->title) {
+            $product->where('title','like','%'.$title.'%');
         }
 
         $product = $product->paginate(16);
@@ -37,6 +42,9 @@ class ProductController extends Controller
         // 销量
         if($type = $request->type) {
             $product->where('type',$type);
+        }
+        if($title = $request->title) {
+            $product->where('title','like','%'.$title.'%');
         }
 
         $product = $product->paginate(16);
