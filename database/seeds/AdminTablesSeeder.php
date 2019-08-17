@@ -135,6 +135,17 @@ class AdminTablesSeeder extends Seeder
                     "permission" => NULL,
                     "created_at" => "2019-08-05 09:49:14",
                     "updated_at" => "2019-08-07 15:34:29"
+                ],
+                [
+                    "id" => 13,
+                    "parent_id" => 0,
+                    "order" => 0,
+                    "title" => "轮播图管理",
+                    "icon" => "fa-bars",
+                    "uri" => "/banners",
+                    "permission" => NULL,
+                    "created_at" => "2019-08-16 23:17:20",
+                    "updated_at" => "2019-08-16 23:17:20"
                 ]
             ]
         );

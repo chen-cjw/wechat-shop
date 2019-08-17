@@ -38,7 +38,14 @@ class ProductController extends AdminController
         $grid->column('stock', __('库存'));
         $grid->column('sold_count', __('销量'));
         $grid->column('price', __('价格'));
+
+        //admin/product/7
+        $grid->column('price', __('价格'));
         //        hot=>热销|recommend=>推荐|common=>普通
+        // 全部关闭
+        $grid->disableActions();
+        // 去掉批量操作
+        $grid->disableBatchActions();
 
         $grid->column('type', __('商品类型'))->display(function ($type) {
             if($type =='hot')
@@ -68,7 +75,10 @@ class ProductController extends AdminController
 
             });
         });
-
+        $grid->column('update', __('操作'))->display(function () {
+            return "<a href="."/admin/product/".$this->id."/edit".">编辑</a>".'||'.
+                "<a href="."/admin/product/".$this->id.">详情</a>";
+        });
         return $grid;
     }
 
