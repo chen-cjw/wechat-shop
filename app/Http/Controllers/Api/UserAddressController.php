@@ -31,9 +31,9 @@ class UserAddressController extends Controller
     }
 
     // 修改 收获地址
-    public function update(UserAddress $user_address, UserAddressRequest $request)
+    public function update(UserAddress $user_address, UserAddressRequest $request,$id)
     {
-        $user_address->update($request->only([
+        UserAddress::where('id',$id)->update($request->only([
             'province',
             'city',
             'district',

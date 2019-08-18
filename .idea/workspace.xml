@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="404529c8-13db-41b0-a869-447c9e411a02" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Transformers/CartTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/CartTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartTransformer.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CartTransformer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Transformers/CartTransformer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -100,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ProductController.php">
+      <file leaf-file-name="UserAddressController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="20" column="41" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="41" />
+            <state relative-caret-position="184">
+              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -193,7 +193,6 @@
         <option value="$PROJECT_DIR$/app/Admin/Controllers/CategoryController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/product_img.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Product.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_07_29_063138_create_products_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/OrdersController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" />
@@ -214,6 +213,7 @@
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/BannerController.php" />
         <option value="$PROJECT_DIR$/app/Transformers/CartTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php" />
       </list>
     </option>
   </component>
@@ -487,12 +487,12 @@
       <workItem from="1565918461986" duration="17000" />
       <workItem from="1565919730633" duration="968000" />
       <workItem from="1565934447131" duration="2062000" />
-      <workItem from="1565953972866" duration="8286000" />
+      <workItem from="1565953972866" duration="8570000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98053000" />
+    <option name="totallyTimeSpent" value="98337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -562,13 +562,6 @@
     <entry file="file://$PROJECT_DIR$/public/admin/css/iconfont.css" />
     <entry file="file://$PROJECT_DIR$/public/admin/js/fileUpload.js" />
     <entry file="file://$PROJECT_DIR$/resources/views/admin/product_img.blade.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -814,6 +807,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserAddressController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
         </state>
       </provider>
     </entry>
