@@ -9,7 +9,7 @@ class BannerTransformer extends TransformerAbstract
     {
         return [
             'id' => $banner->id,
-            'image' => $banner->image,
+            'image' => config('app.url').'/storage/'.$banner->image,
             'url' => $banner->url,
         ];
     }
