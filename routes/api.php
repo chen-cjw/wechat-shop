@@ -24,6 +24,7 @@ $api->version('v1', [
 ], function ($api) {
     // 授权
     $api->post('/auth','AuthController@store')->name('api.auth.store');
+    $api->get('/banners','BannerController@index')->name('api.banner.index');
 
     $api->group(['middleware' => ['api.auth']], function ($api) {
 
