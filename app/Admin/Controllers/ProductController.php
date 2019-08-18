@@ -40,7 +40,7 @@ class ProductController extends AdminController
         $grid->column('price', __('价格'));
 
         //admin/product/7
-        $grid->column('price', __sold_count_sort('价格'));
+        $grid->column('price', __('价格'));
         //        hot=>热销|recommend=>推荐|common=>普通
         // 全部关闭
         $grid->disableActions();
