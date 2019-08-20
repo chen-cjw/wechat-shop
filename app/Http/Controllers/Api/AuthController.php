@@ -25,12 +25,19 @@ class AuthController extends Controller
         $sessionUser = $app->auth->session($code);
         $openid = $sessionUser['openid'];
 
-        $user = User::where('openid',$openid)->firstOrFail();
+        $user = User::where('openid',$openid)->first();
+        echo $user;
         if (!$user) {
+            echo 1111;
+
             $user = User::create([
                 'openid' => $openid,
             ]);
+
+
         }
+        echo $user;
+
         $token=\Auth::guard('api')->fromUser($user);
         return $this->respondWithToken($token,$openid)->setStatusCode(201);
 
@@ -51,7 +58,7 @@ class AuthController extends Controller
 
         return $this->response->array([
             'access_token' => $token,
-            'openid' => $token,
+            'openid' => $openid,
             'token_type' => 'Bearer',
             'expires_in' => Auth::guard('api')->factory()->getTTL() * 10080
         ]);
