@@ -23,17 +23,15 @@ class AuthController extends Controller
         // 小程序
         $app = app('wechat.mini_program');
         $sessionUser = $app->auth->session($code);
-        return $sessionUser;
-        return 111;
         $user = User::where('openid',$sessionUser->openid)->firstOrFail();
+        $openid = $sessionUser->openid;
         if (!$user) {
-            $sessionUser = $app->auth->session($code);
             $user = User::create([
-                'openid' => $sessionUser->code,
+                'openid' => $openid,
             ]);
         }
         $token=\Auth::guard('api')->fromUser($user);
-        return $this->respondWithToken($token)->setStatusCode(201);
+        return $this->respondWithToken($token,$openid)->setStatusCode(201);
 
     }
 
@@ -47,13 +45,14 @@ class AuthController extends Controller
         Auth::guard('api')->logout();
         return $this->response->noContent();
     }
-    protected function respondWithToken($token)
+    protected function respondWithToken($token,$openid)
     {
 
         return $this->response->array([
             'access_token' => $token,
+            'openid' => $token,
             'token_type' => 'Bearer',
-            'expires_in' => Auth::guard('api')->factory()->getTTL() * 864000
+            'expires_in' => Auth::guard('api')->factory()->getTTL() * 10080
         ]);
     }
 }
