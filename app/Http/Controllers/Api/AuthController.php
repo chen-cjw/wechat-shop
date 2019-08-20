@@ -22,21 +22,13 @@ class AuthController extends Controller
         $code = $request->code;
         // 小程序
         $app = app('wechat.mini_program');
-//        dd($app);
-//        return $app;
-        if($code) {
-            $sessionUser = $app->auth->session($code);
-            dd($sessionUser);
-        }
-        $user = User::where('openid',$request->openid)->firstOrFail();
-//
+        $sessionUser = $app->auth->session($code);
+        dd($sessionUser);
+        $user = User::where('openid',$sessionUser->openid)->firstOrFail();
         if (!$user) {
             $sessionUser = $app->auth->session($code);
             $user = User::create([
-                'nickname' => $sessionUser->getNickname(),
-                'avatar' => $sessionUser->getAvatar(),
-                'openid' => $sessionUser->getId(),
-                'unionid' => $sessionUser->unionid,
+                'openid' => $sessionUser->code,
             ]);
         }
         $token=\Auth::guard('api')->fromUser($user);
