@@ -24,23 +24,12 @@ class AuthController extends Controller
         $app = app('wechat.mini_program');
         $sessionUser = $app->auth->session($code);
         $openid = $sessionUser['openid'];
-        echo 222;
-        echo $openid;
-        echo 222;
-
         $user = User::where('openid',$openid)->first();
-        echo $user;
         if (!$user) {
-            echo 1111;
-
             $user = User::create([
                 'openid' => $openid,
             ]);
-
-
         }
-        echo $user;
-
         $token=\Auth::guard('api')->fromUser($user);
         return $this->respondWithToken($token,$openid)->setStatusCode(201);
 
