@@ -24,6 +24,9 @@ class AuthController extends Controller
         $app = app('wechat.mini_program');
         $sessionUser = $app->auth->session($code);
         $openid = $sessionUser['openid'];
+        echo 222;
+        echo $openid;
+        echo 222;
 
         $user = User::where('openid',$openid)->first();
         echo $user;
