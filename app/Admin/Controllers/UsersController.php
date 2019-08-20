@@ -28,7 +28,7 @@ class UsersController extends AdminController
 
         $grid->column('id', __('Id'))->sortable();
         $grid->column('openid', __('Openid'));
-        $grid->column('nickname', __('Nickname'));
+        //$grid->column('nickname', __('Nickname'));
         $grid->column('created_at', __('Created at'))->sortable();
         $grid->column('updated_at', __('Updated at'))->sortable();
         $grid->filter(function ($filter) {
