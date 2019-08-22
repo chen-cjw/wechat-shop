@@ -25,10 +25,20 @@ $api->version('v1', [
     // 授权
     $api->post('/auth','AuthController@store')->name('api.auth.store');
 
+    // 分类
+    $api->get('/category', 'CategoryController@index')->name('api.category.index');
+    // 商品
+    $api->get('/category/{category_id}/product', 'ProductController@index')->name('api.product.index');
+    // typeIndex
+    $api->get('/category/product', 'ProductController@typeIndex')->name('api.product.typeIndex');
+    // 商品详情
+    $api->get('/product/{id}', 'ProductController@show')->name('api.product.show');
+
+    // 轮播图
+    $api->get('/banners','BannerController@index')->name('api.banner.index');
+    
     $api->group(['middleware' => ['api.auth']], function ($api) {
 
-        // 轮播图
-        $api->get('/banners','BannerController@index')->name('api.banner.index');
 
         $api->get('/auth','AuthController@index')->name('api.auth.index');
 
@@ -48,14 +58,7 @@ $api->version('v1', [
         $api->post('/user_address/{user_address}', 'UserAddressController@select')->name('api.user_addresses.select');
 
 
-        // 分类
-        $api->get('/category', 'CategoryController@index')->name('api.category.index');
-        // 商品
-        $api->get('/category/{category_id}/product', 'ProductController@index')->name('api.product.index');
-        // typeIndex
-        $api->get('/category/product', 'ProductController@typeIndex')->name('api.product.typeIndex');
-        // 商品详情
-        $api->get('/product/{id}', 'ProductController@show')->name('api.product.show');
+
 
         // 购物车商品
         $api->get('/cart', 'CartController@index')->name('api.cart.index');
