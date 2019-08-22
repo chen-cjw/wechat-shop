@@ -52,7 +52,7 @@ class AuthController extends Controller
             'access_token' => $token,
             'openid' => $openid,
             'token_type' => 'Bearer',
-            'expires_in' => Auth::guard('api')->factory()->getTTL() * 10080
+            'expires_in' => Auth::guard('api')->factory()->getTTL() * 120
         ]);
     }
 }
