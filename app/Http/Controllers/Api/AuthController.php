@@ -19,19 +19,20 @@ class AuthController extends Controller
     // 一个是登陆
     public function store(Request $request)
     {
-        $code = $request->code;
-        // 小程序
-        $app = app('wechat.mini_program');
-        $sessionUser = $app->auth->session($code);
-        $openid = $sessionUser['openid'];
-        $user = User::where('openid',$openid)->first();
-        if (!$user) {
-            $user = User::create([
-                'openid' => $openid,
-            ]);
-        }
+//        $code = $request->code;
+//        // 小程序
+//        $app = app('wechat.mini_program');
+//        $sessionUser = $app->auth->session($code);
+//        $openid = $sessionUser['openid'];
+//        $user = User::where('openid',$openid)->first();
+//        if (!$user) {
+//            $user = User::create([
+//                'openid' => $openid,
+//            ]);
+//        }
+        $user = User::find(1);
         $token=\Auth::guard('api')->fromUser($user);
-        return $this->respondWithToken($token,$openid)->setStatusCode(201);
+        return $this->respondWithToken($token,$openid=11)->setStatusCode(201);
 
     }
 
