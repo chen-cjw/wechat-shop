@@ -23,7 +23,7 @@ $api->version('v1', [
     'middleware' => ['serializer:array','api.throttle']
 ], function ($api) {
     // 授权
-    $api->put('/auth','AuthController@store')->name('api.auth.store');
+    $api->post('/auth','AuthController@store')->name('api.auth.store');
 
     $api->group(['middleware' => ['api.auth']], function ($api) {
 
