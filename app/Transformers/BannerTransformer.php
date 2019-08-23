@@ -11,6 +11,7 @@ class BannerTransformer extends TransformerAbstract
             'id' => $banner->id,
             'image' => config('app.url').'/storage/'.$banner->image,
             'url' => $banner->url,
+            'openid' => auth('api')->user() ? auth('api')->user()->openid : null,
         ];
     }
 }

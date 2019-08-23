@@ -14,6 +14,7 @@ class CartTransformer extends TransformerAbstract
             'product_id' => $cartItem->product_id,
             'user_id' => $cartItem->user_id,
             'product' => $cartItem->product,
+            'openid' => auth('api')->user() ? auth('api')->user()->openid : null,
 
         ];
     }

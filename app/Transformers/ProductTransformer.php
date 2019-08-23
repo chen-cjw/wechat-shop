@@ -20,6 +20,7 @@ class ProductTransformer extends TransformerAbstract
             'category_id' => $product->category_id,
             'type' => $product->type,
             'description' => $product->description,
+            'openid' => auth('api')->user() ? auth('api')->user()->openid : null,
         ];
     }
 }

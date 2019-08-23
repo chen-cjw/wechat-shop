@@ -20,6 +20,7 @@ class AuthController extends Controller
     public function store(Request $request)
     {
         $code = $request->code;
+        return 111;
         // 小程序
         $app = app('wechat.mini_program');
         $sessionUser = $app->auth->session($code);

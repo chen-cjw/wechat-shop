@@ -13,6 +13,7 @@ class UserTransformer extends TransformerAbstract
             'nickname' => $user->nickname,
             'sex' => $user->sex,
             'avatar' => $user->avatar,
+            'openid' => auth('api')->user() ? auth('api')->user()->openid : null,
             'created_at' => $user->created_at->toDateTimeString(),
             'updated_at' => $user->updated_at->toDateTimeString(),
         ];

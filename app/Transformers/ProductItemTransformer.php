@@ -17,6 +17,7 @@ class ProductItemTransformer extends TransformerAbstract
             'review_count' => $product->review_count,
             'price' => $product->price,
             'category_id' => $product->category_id,
+            'openid' => auth('api')->user() ? auth('api')->user()->openid : null,
             'created_at' => $product->created_at->timestamp,
             'updated_at' => $product->updated_at->timestamp,
         ];

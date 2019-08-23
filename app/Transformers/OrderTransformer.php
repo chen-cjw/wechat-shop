@@ -15,6 +15,7 @@ class OrderTransformer extends TransformerAbstract
             'total_amount' => $order->total_amount,
             'remark' => $order->remark,
             'ship_status' => $order->ship_status,
+            'openid' => auth('api')->user() ? auth('api')->user()->openid : null,
             'created_at' => $order->created_at->toDateTimeString(),
             'updated_at' => $order->updated_at->toDateTimeString(),
             'items' => $order->items,
