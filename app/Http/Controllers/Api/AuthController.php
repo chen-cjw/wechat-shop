@@ -21,16 +21,21 @@ class AuthController extends Controller
     {
         $code = $request->code;
         // 小程序
-        $app = app('wechat.mini_program');
-        $sessionUser = $app->auth->session($code);
-        $openid = $sessionUser['openid'];
-        $user = User::where('openid',$openid)->first();
-        if (!$user) {
-            $user = User::create([
-                'openid' => $openid,
-            ]);
+        try {
+
+            $app = app('wechat.mini_program');
+            $sessionUser = $app->auth->session($code);
+            $openid = $sessionUser['openid'];
+            $user = User::where('openid', $openid)->first();
+            if (!$user) {
+                $user = User::create([
+                    'openid' => $openid,
+                ]);
+            }
+            $token = \Auth::guard('api')->fromUser($user);
+        } catch (\Exception $e) {
+            throw new \Exception('授权失败,请重新授权!');
         }
-        $token=\Auth::guard('api')->fromUser($user);
         return $this->respondWithToken($token,$openid)->setStatusCode(201);
 
     }
