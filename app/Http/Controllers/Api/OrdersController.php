@@ -115,6 +115,8 @@ class OrdersController extends Controller
             // 遍历用户提交的 SKU
             foreach ($items as $data) {
                 $sku  = Product::find($data['product_id']);
+                $sku->increment('sold_count',$data['amount']);
+
                 // 创建一个 OrderItem 并直接与当前订单关联
                 $item = $order->items()->make([
                     'amount' => $data['amount'],
@@ -127,6 +129,7 @@ class OrdersController extends Controller
                 if ($sku->decreaseStock($data['amount']) <= 0) {
                     throw new \ErrorException('该商品库存不足');
                 }
+
             }
 
             // 更新订单总金额
