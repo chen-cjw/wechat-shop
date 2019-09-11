@@ -39,7 +39,7 @@ class OrdersController extends AdminController
 //            'received' => '已收货',
 //            'close' => '取消',
 //        ]);
-        $grid->column('ship_status')->editable('select', [
+        $grid->column('ship_status','物流')->editable('select', [
             'pending' => '未发货', 'delivered' => '已发货',
             'received' => '已收货',
             'close' => '取消',
