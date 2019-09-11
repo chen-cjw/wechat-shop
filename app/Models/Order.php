@@ -70,6 +70,11 @@ class Order extends Model
         return $this->ship_status;
         
     }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
     public static function findAvailableNo()
     {
         // 订单流水号前缀

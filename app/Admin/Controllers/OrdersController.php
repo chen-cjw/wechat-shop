@@ -34,18 +34,17 @@ class OrdersController extends AdminController
         $grid->column('user.openid', __('用户唯一标识'));
         //$grid->column('address', __('Address'));
         $grid->column('total_amount', __('总金额'));
-        $grid->column('status', __('物流'))->display(function($value) {
-            return Order::$shipStatusMap[$value];
-        });
-
-        $grid->ship_status('编辑物流')->display(function($value) {
-            return Order::$shipStatusMap[$value];
-        })->editable('select', ['pending' => '未发货', 'delivered' => '已发货', 'received' => '已收货','close'=>'取消'])->filter([
-            'pending' => '未发货',
-            'delivered' => '已发货',
+//        $grid->column('ship_status','物流')->radio([
+//            'pending' => '未发货', 'delivered' => '已发货',
+//            'received' => '已收货',
+//            'close' => '取消',
+//        ]);
+        $grid->column('ship_status')->editable('select', [
+            'pending' => '未发货', 'delivered' => '已发货',
             'received' => '已收货',
             'close' => '取消',
         ]);
+
 
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));

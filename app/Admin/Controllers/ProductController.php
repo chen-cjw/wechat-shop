@@ -116,6 +116,8 @@ class ProductController extends AdminController
         $form = new Form(new Product);
 
         $form->select('category_id', __('分类名'))->options(Category::pluck('title','id'));
+        $form->select('type', __('商品类型'))->default('common')->options(['hot'=>'热销','recommend'=>'推荐','common'=>'普通']);
+
         $form->text('title', __('商品名称'));
         $form->UEditor('description', __('商品详情'));
         $form->multipleImage('image', __('商品封面图片文件路径'))->removable();
@@ -124,7 +126,6 @@ class ProductController extends AdminController
         $form->number('sold_count', __('销量'))->default(0);
         $form->decimal('price', __('价格'))->default(0.00);
 //        hot=>热销|recommend=>推荐|common=>普通
-        $form->select('type', __('商品类型'))->default('common')->options(['hot'=>'热销','recommend'=>'推荐','common'=>'普通']);
         $categoryId = request()->category_id;
         $isAjax = request()->ajax();
         if(!$isAjax) {
