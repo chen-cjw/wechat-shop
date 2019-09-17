@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74a29165df23014d18a2b0bd8ce09f47",
+    "content-hash": "613ea55015bb8a235337229897818227",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1559,6 +1559,50 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "james.xue/laravel-admin-grid",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xiaoxuan6/laravel-admin-grid.git",
+                "reference": "e70b3f968109828e2c3c4f99efe471008d69186d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xiaoxuan6/laravel-admin-grid/zipball/e70b3f968109828e2c3c4f99efe471008d69186d",
+                "reference": "e70b3f968109828e2c3c4f99efe471008d69186d",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "James\\Admin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xiaoxuan6",
+                    "email": "1527736751@qq.com"
+                }
+            ],
+            "description": "laravel-admin Grid",
+            "homepage": "https://github.com/xiaoxuan6/laravel-admin-grid",
+            "keywords": [
+                "extension",
+                "laravel-admin"
+            ],
+            "time": "2019-08-06T06:22:01+00:00"
         },
         {
             "name": "laravel-admin-ext/grid-lightbox",

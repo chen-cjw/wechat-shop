@@ -28,12 +28,13 @@ class OrdersController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Order);
+        $grid->model()->orderBy('created_at','desc');
 
-        $grid->column('id', __('Id'));
+        $grid->column('id', __('Id'))->sortable();
         $grid->column('no', __('订单号'));
         $grid->column('user.openid', __('用户唯一标识'));
         //$grid->column('address', __('Address'));
-        $grid->column('total_amount', __('总金额'));
+        $grid->column('total_amount', __('总金额'))->sortable();
 //        $grid->column('ship_status','物流')->radio([
 //            'pending' => '未发货', 'delivered' => '已发货',
 //            'received' => '已收货',
@@ -46,8 +47,8 @@ class OrdersController extends AdminController
         ]);
 
 
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('Created at'))->sortable();
+        $grid->column('updated_at', __('Updated at'))->sortable();
         // 禁用创建按钮，后台不需要创建订单
         $grid->disableCreateButton();
         $grid->actions(function ($actions) {

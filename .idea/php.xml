@@ -120,6 +120,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel-admin-ext/grid-lightbox" />
       <path value="$PROJECT_DIR$/vendor/overtrue/laravel-ueditor" />
       <path value="$PROJECT_DIR$/vendor/codingyu/ueditor" />
+      <path value="$PROJECT_DIR$/vendor/james.xue/laravel-admin-grid" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

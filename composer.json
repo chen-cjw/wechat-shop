@@ -14,6 +14,7 @@
         "dingo/api": "^2.3",
         "encore/laravel-admin": "1.7.3",
         "fideloper/proxy": "^4.0",
+        "james.xue/laravel-admin-grid": "^1.2",
         "laravel-admin-ext/grid-lightbox": "^1.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
