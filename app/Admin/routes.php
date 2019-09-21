@@ -15,6 +15,8 @@ Route::group([
     //
 //    $router->get('category', 'CategoryController@index');
     $router->resource('/category','CategoryController');
+    $router->get('/product/collectIndex','ProductController@collectIndex');
+    $router->post('/product/collect','ProductController@collect');
     $router->resource('/product','ProductController')->only(['store','index','create','show','update','edit']);
     $router->resource('/orders', 'OrdersController');
     $router->resource('/banners', 'BannerController');

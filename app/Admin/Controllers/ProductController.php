@@ -8,6 +8,9 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Goutte\Client;
+use Encore\Admin\Layout\Content;
+
 
 class ProductController extends AdminController
 {
@@ -33,7 +36,7 @@ class ProductController extends AdminController
         $grid->column('id', __('Id'));
         $grid->category()->title('分类名');
         $grid->column('title', __('商品名称'));
-        $grid->column('image', __('商品封面图片文件路径'))->lightbox(['width' => 50, 'height' => 50]);
+        $grid->column('image', __('商品封面图片文件路径'))->lightbox(['width' => 20, 'height' => 20]);
 
         $grid->column('stock', __('库存'));
         $grid->column('sold_count', __('销量'));
@@ -41,6 +44,9 @@ class ProductController extends AdminController
 
         //admin/product/7
         $grid->column('price', __('价格'));
+        $grid->column('collect', __('采集数据'))->display(function () {
+            return "<a href='/admin/product/collectIndex' target='_blank'>采集</a>";
+        });
         //        hot=>热销|recommend=>推荐|common=>普通
         // 全部关闭
         $grid->disableActions();
@@ -94,14 +100,14 @@ class ProductController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('title', __('商品名称'));
-        $show->field('description', __('商品详情'))->unescape();
-        $show->field('image', __('商品封面图片文件路径'))->image();
+        $show->field('image', __('商品封面图片文件路径'))->image('',100,100);
         $show->field('on_sale', __('商品是否正在售卖'));
         $show->field('stock', __('库存'));
         $show->field('sold_count', __('销量'));
         $show->field('price', __('价格'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
+        $show->field('description', __('商品详情'))->unescape();
 
         return $show;
     }
@@ -137,4 +143,46 @@ class ProductController extends AdminController
 
         return $form;
     }
+
+    public function collectIndex(Content $content)
+    {
+        return $content
+        ->title($this->title())
+        ->description('采集')
+        ->body(view('product',['cateArr'=>Category::get()]));
+    }
+    // 采集数据
+    public function collect()
+    {
+
+        $client = new Client();
+        $url = request()->collect_url;
+        $crawler = $client->request('GET', $url);
+        // 商品名称
+        $title = $slogan = $crawler->filter('div.product-title>h1')->html();
+        //$name = explode('</span>',$crawler->filter('div.proinfo-title > h1')->html())[2];
+        // 商品详情
+        $description = $crawler->filter('div.content-detail')->html();
+        //商品封面图片文件路径
+        $banCount = $crawler->filter('span.pic-nav-count')->text();
+        $bannerArr = array();
+        for ($x=0; $x<(int)$banCount; $x++) {
+            $bannerItem = $crawler->filter('div.pic-slider>div.pic-item>a>img')->eq($x)->attr('ori-src');
+            $bannerArr[] = $bannerItem ? 'https://'.$bannerItem : 'https://'.$crawler->filter('div.pic-slider>div.pic-item>a>img')->eq($x)->attr('data-src');
+        }
+        $data = [
+            'title'=>$title,
+            'description'=>$description,
+            'image'=>$bannerArr,
+            'price'=>request()->price,
+            'type'=>request()->type,
+            'category_id'=>request()->category_id,
+        ];
+
+        Product::create($data);
+        admin_success($title, '采集成功');
+        return redirect('/admin/product');
+    }
+    
+    
 }

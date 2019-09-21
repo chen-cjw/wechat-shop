@@ -13,6 +13,7 @@
         "codingyu/ueditor": "^2.0",
         "dingo/api": "^2.3",
         "encore/laravel-admin": "1.7.3",
+        "fabpot/goutte": "^3.2",
         "fideloper/proxy": "^4.0",
         "james.xue/laravel-admin-grid": "^1.2",
         "laravel-admin-ext/grid-lightbox": "^1.0",
