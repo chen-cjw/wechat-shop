@@ -7,12 +7,6 @@
                 <div class="box box-info" style="">
                     <div class="box-header with-border">
                         <h3 class="box-title">创建</h3>
-
-                        <div class="box-tools">
-                            <div class="btn-group pull-right" style="margin-right: 5px">
-                                <a href="http://xiaochengxu.test/admin/product" class="btn btn-sm btn-default" title="列表"><i class="fa fa-list"></i><span class="hidden-xs">&nbsp;列表</span></a>
-                            </div>
-                        </div>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->

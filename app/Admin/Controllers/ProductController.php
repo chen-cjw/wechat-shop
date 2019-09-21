@@ -85,6 +85,11 @@ class ProductController extends AdminController
             return "<a href="."/admin/product/".$this->id."/edit".">编辑</a>".'||'.
                 "<a href="."/admin/product/".$this->id.">详情</a>";
         });
+//                         <button type="submit" class="btn btn-success" id="ship-btn">发货</button>
+        $grid->tools(function (Grid\Tools $tools) {
+            // "<a class='report-posts btn btn-sm btn-danger'><i class='fa fa-info-circle'></i>举报</a>"
+            $tools->append("<a href='/admin/product/collectIndex' target='_blank' style='float: right' class='report-posts btn btn-sm btn-danger'>采集</a>");
+        });
         return $grid;
     }
 
