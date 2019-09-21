@@ -158,6 +158,8 @@ class ProductController extends AdminController
 
         $client = new Client();
         $url = request()->collect_url;
+
+        $url = str_replace("https://product.suning.com/","https://m.suning.com/product/",$url);
         $crawler = $client->request('GET', $url);
         // 商品名称
         $title = $slogan = $crawler->filter('div.product-title>h1')->html();
