@@ -78,9 +78,9 @@ class CategoryController extends AdminController
     {
         $form = new Form(new Category);
 
-        $form->text('title', __('分类名'));
+        $form->text('title', __('分类名'))->rules('required');
         $form->text('sort_num', __('Sort num'))->default(0);
-        $form->image('image', __('分类缩略图'));
+        $form->image('image', __('分类缩略图'))->rules('required');
 
         return $form;
     }

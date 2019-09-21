@@ -124,8 +124,8 @@ class ProductController extends AdminController
         $form->select('category_id', __('分类名'))->options(Category::pluck('title','id'));
         $form->select('type', __('商品类型'))->default('common')->options(['hot'=>'热销','recommend'=>'推荐','common'=>'普通']);
 
-        $form->text('title', __('商品名称'));
-        $form->UEditor('description', __('商品详情'));
+        $form->text('title', __('商品名称'))->rules('required');
+        $form->UEditor('description', __('商品详情'))->rules('required');
         $form->multipleImage('image', __('商品封面图片文件路径'))->removable();
         $form->switch('on_sale', __('商品是否正在售卖'))->default(1);
         $form->number('stock', __('库存'))->default(0);
