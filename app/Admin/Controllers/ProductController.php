@@ -122,7 +122,7 @@ class ProductController extends AdminController
     {
         $form = new Form(new Product);
 
-        $form->select('category_id', __('分类名'))->options(Category::pluck('title','id'));
+        $form->select('category_id', __('分类名'))->options(Category::pluck('title','id'))->rules('required');
         $form->select('type', __('商品类型'))->default('common')->options(['hot'=>'热销','recommend'=>'推荐','common'=>'普通']);
 
         $form->text('title', __('商品名称'))->rules('required');
