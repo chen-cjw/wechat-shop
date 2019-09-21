@@ -44,10 +44,6 @@ class ProductController extends AdminController
 
         //admin/product/7
         $grid->column('price', __('价格'));
-        $grid->column('collect', __('采集数据'))->display(function () {
-            return "<a href='/admin/product/collectIndex' target='_blank'>采集</a>";
-        });
-        //        hot=>热销|recommend=>推荐|common=>普通
         // 全部关闭
         $grid->disableActions();
         // 去掉批量操作
