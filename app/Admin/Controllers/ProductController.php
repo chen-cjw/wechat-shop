@@ -180,6 +180,7 @@ class ProductController extends AdminController
             'price'=>request()->price,
             'type'=>request()->type,
             'category_id'=>request()->category_id,
+            'on_sale'=>false,
         ];
 
         Product::create($data);
